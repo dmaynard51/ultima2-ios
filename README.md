@@ -25,7 +25,7 @@ Requires a **Mac** with **Xcode** and **git**.
 ```sh
 git clone https://github.com/dmaynard51/ultima2-ios.git
 cd ultima2-ios
-dosbox/build-ios-dosbox.sh ABCDE12345          # your 10-char Apple Team ID
+dosbox/build-ios-dosbox.sh          # Team ID is auto-detected; pass yours to override
 ```
 
 It clones the iOS DOSBox, patches it to auto-run Ultima II, brands it with the hourglass
@@ -39,10 +39,24 @@ yours is elsewhere, pass the folder (the one with `ULTIMAII.EXE`) as the last ar
 
 (Find your Team ID: `security find-identity -v -p codesigning` — the code in parentheses.)
 
+> **No paid Apple Developer account ($99/yr) needed.** Installing to your own device
+> is free with any Apple ID. The build **strips the extra app-extension** so a free
+> "Personal Team" has just one target to sign — the usual cause of the bogus "$99 to
+> add a device" wall. If command-line signing still fails (Apple blocks free-account
+> CLI signing), the script prints the exact free **Xcode ▸ Run ▶** steps. Note a free
+> Apple ID can keep **3 sideloaded apps installed at once** and re-signs every 7 days.
+
 ## 🎮 Playing
 
-Ultima II is keyboard-driven. dospad gives you an **on-screen keyboard** and gamepad
-overlay — tap the keyboard toggle to type commands. Hold the phone in **landscape**.
+The app runs in **landscape** with a purpose-built control layout (no fiddly DOS
+keyboard or toolbar):
+
+- a **movement D-pad** on the left,
+- the frequent **Ultima II commands** as labelled buttons — Attack, Board, Cast, Descend, Enter, Fire, Get, Klimb, Ready, Steal, Talk, Yell,
+- a utility row: **⌨** (full keyboard), **Esc**, **↵**, **Pass**, **Yes**, **No**.
+
+The game screen sits above the controls (nothing is covered), and there's **sound**.
+When you need to type, tap **⌨** for a full QWERTY, and **⌨▸CMDS** flips back.
 
 ## ☕ Support this port
 
